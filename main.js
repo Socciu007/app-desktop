@@ -8,18 +8,7 @@ async function main() {
   console.log('Version: ', process.versions);
 
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
-    width: 1200,
-    height: 800,
-    x: 0,
-    y: 0,
-    webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: false,
-      contextIsolation: true,
-      session: session.fromPartition('persist:shanghaifanyuan613@gmail.com')
-    },
-  })
+  const mainWindow = await createWindow({ width: 1200, height: 800, sessionName: 'main' })
 
   // Load the index.html in project of the desktop app.
   await mainWindow.loadFile('index.html')
@@ -30,7 +19,7 @@ async function main() {
   });
 
   // Open the DevTools. (Ctr + Shift + I)
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   mainWindow.webContents.on('did-finish-load', async () => {
     await delay(3000);
