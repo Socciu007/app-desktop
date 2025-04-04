@@ -10,7 +10,5 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('electronBridge', {
-  handleSelectAccount: (data) => ipcRenderer.invoke("data-input", data),
-  sendDataChat: (data) => ipcRenderer.invoke("data-chat", data),
-  requireAction: (action) => ipcRenderer.invoke("require-action", action)
+  sendApplicationChoose: (item) => ipcRenderer.invoke("item-application", item),
 });

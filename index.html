@@ -7,13 +7,10 @@
       http-equiv="Content-Security-Policy"
       content="default-src 'self' https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <title>Quick Start Application</title>
   </head>
 
@@ -23,7 +20,7 @@
         <h1 class="section-title">Quick Start Application</h1>
         <div class="section-content">
           <div class="section-content-wraper">
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('cnki')">
               <div class="item-image">
                 <img src="assets/icons/cnki.png" alt="logo-cnki" />
               </div>
@@ -31,7 +28,7 @@
                 <h2 class="item-content-title">CNKI</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('bilibili')">
               <div class="item-image">
                 <img src="assets/icons/bilibili.png" alt="logo-bilibili" />
               </div>
@@ -39,7 +36,7 @@
                 <h2 class="item-content-title">Bilibili</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('cctv')">
               <div class="item-image">
                 <img src="assets/icons/cctv.png" alt="logo-cctv" />
               </div>
@@ -47,7 +44,15 @@
                 <h2 class="item-content-title">CCTV</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('douyu')">
+              <div class="item-image">
+                <img src="assets/icons/douyu.png" alt="logo-douyu" />
+              </div>
+              <div class="item-content">
+                <h2 class="item-content-title">Douyu</h2>
+              </div>
+            </div>
+            <div class="item" onclick="handleClickItemApplication('cctv5-live')">
               <div class="item-image">
                 <img src="assets/icons/cctv5-live.png" alt="logo-cctv5-live" />
               </div>
@@ -55,7 +60,7 @@
                 <h2 class="item-content-title">CCTV5 Live</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('cctv-sport')">
               <div class="item-image">
                 <img src="assets/icons/cctv-sport.png" alt="logo-cctv-sport" />
               </div>
@@ -63,7 +68,7 @@
                 <h2 class="item-content-title">CCTV Sport</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('douyin')">
               <div class="item-image">
                 <img src="assets/icons/douyin.png" alt="logo-douyin" />
               </div>
@@ -71,7 +76,7 @@
                 <h2 class="item-content-title">Douyin</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('iqiyi')">
               <div class="item-image">
                 <img src="assets/icons/iqiyi.png" alt="logo-iqiyi" />
               </div>
@@ -79,31 +84,31 @@
                 <h2 class="item-content-title">iQIYI</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('jd')">
               <div class="item-image">
                 <img src="assets/icons/jd.png" alt="logo-jd" />
               </div>
               <div class="item-content">
-                <h2 class="item-content-title">JD</h2>
+                <h2 class="item-content-title">JD.com</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('kugou')">
               <div class="item-image">
                 <img src="assets/icons/kugou.png" alt="logo-kugou" />
               </div>
               <div class="item-content">
-                <h2 class="item-content-title">Kugou</h2>
+                <h2 class="item-content-title">Kugou Music</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('kwai')">
               <div class="item-image">
-                <img src="assets/icons/kuaishou.png" alt="logo-kuaishou" />
+                <img src="assets/icons/kwai.png" alt="logo-kwai" />
               </div>
               <div class="item-content">
-                <h2 class="item-content-title">Kuaishou</h2>
+                <h2 class="item-content-title">Kwai</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('kuwo-music')">
               <div class="item-image">
                 <img src="assets/icons/kuwo-music.png" alt="logo-kuwo-music" />
               </div>
@@ -111,15 +116,15 @@
                 <h2 class="item-content-title">Kuwo Music</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('little-red-book')">
               <div class="item-image">
                 <img src="assets/icons/little-red-book.png" alt="logo-little-red-book" />
               </div>
               <div class="item-content">
-                <h2 class="item-content-title">Little Red Book</h2>
+                <h2 class="item-content-title">RED</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('migu-music')">
               <div class="item-image">
                 <img src="assets/icons/migu-music.png" alt="logo-migu-music" />
               </div>
@@ -127,7 +132,7 @@
                 <h2 class="item-content-title">Migu Music</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('migu')">
               <div class="item-image">
                 <img src="assets/icons/migu.png" alt="logo-migu" />
               </div>
@@ -135,7 +140,7 @@
                 <h2 class="item-content-title">Migu</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('netease-cloud')">
               <div class="item-image">
                 <img src="assets/icons/netease-cloud.png" alt="logo-netease-cloud" />
               </div>
@@ -143,7 +148,7 @@
                 <h2 class="item-content-title">NetEase Cloud Music</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('qq-music')">
               <div class="item-image">
                 <img src="assets/icons/qq-music.png" alt="logo-qq-music" />
               </div>
@@ -151,7 +156,7 @@
                 <h2 class="item-content-title">QQ Music</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('taobao')">
               <div class="item-image">
                 <img src="assets/icons/taobao.png" alt="logo-taobao" />
               </div>
@@ -159,7 +164,7 @@
                 <h2 class="item-content-title">Taobao</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('tencent-video')">
               <div class="item-image">
                 <img src="assets/icons/tencent-video.png" alt="logo-tencent-video" />
               </div>
@@ -167,7 +172,7 @@
                 <h2 class="item-content-title">Tencent Video</h2>
               </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="handleClickItemApplication('xigua-video')">
               <div class="item-image">
                 <img src="assets/icons/xigua-video.png" alt="logo-xigua-video" />
               </div>
@@ -183,46 +188,6 @@
     <!-- 引用外部 JavaScript 文件 -->
     <script src="./renderer.js"></script>
     <!-- 添加事件监听器 -->
-    <script>
-      // Add event run scrape
-      document
-        .getElementById("btnSelectAccount")
-        .addEventListener("click", handleRunScrape);
-
-      // Add event add account
-      document.getElementById("btnAddAccount").addEventListener("click", () => {
-        let accountCount = document.querySelectorAll(".container-input").length;
-
-        // If account count is greater than 5, return
-        if (accountCount > 4) {
-          document.getElementById("alert-message").innerHTML =
-            "You can only add up to 5 accounts";
-          document.getElementById("alert-message").style.display = "block";
-          return;
-        }
-
-        handleAddAccount(accountCount);
-      });
-
-      // Add event change account
-      document.addEventListener("DOMContentLoaded", handleChangeAccount);
-
-      // Add event select2
-      $(document).ready(function () {
-        $(".select-account").select2({
-          tags: true, // Allow to enter new value
-          multiple: false, // Only select one value
-          placeholder: "Enter or select email",
-          allowClear: true,
-          tokenSeparators: [",", " "], // Press Enter or comma to add
-        });
-
-        // When user enter email, automatically select it
-        $(".select-account").on("select2:select", function (e) {
-          let newValue = e.params.data.id;
-          $(this).val(newValue).trigger("change");
-        });
-      });
-    </script>
+    <script></script>
   </body>
 </html>

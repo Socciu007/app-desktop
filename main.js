@@ -14,9 +14,80 @@ async function main() {
   await mainWindow.loadFile('index.html')
 
   // IPC event listener (Listen data from renderer process)
-  ipcMain.handle("data-input", async (event, data) => {
+  ipcMain.handle("item-application", async (event, data) => {
     console.log("Received data from renderer: ", data);
+    // Open the application with new browser window
+    const newWindow = await createWindow({ width: 1200, height: 800, x: 0, y: 0, sessionName: data })
+    switch (data) {
+      case 'cnki':
+        await newWindow.loadURL('https://www.cnki.net/')
+        break
+      case 'bilibili':
+        await newWindow.loadURL('https://www.bilibili.com/')
+        break
+      case 'cctv':
+        await newWindow.loadURL('https://www.cctv.com/')
+        break
+      case 'douyu':
+        await newWindow.loadURL('https://www.douyu.com/')
+        break
+      case 'douyin':
+        await newWindow.loadURL('https://www.douyin.com/')
+        break
+      case 'iqiyi':
+        await newWindow.loadURL('https://www.iqiyi.com/')
+        break
+      case 'jd':
+        await newWindow.loadURL('https://www.jd.com/')
+        break
+      case 'kugou':
+        await newWindow.loadURL('https://www.kugou.com/')
+        break
+      case 'kwai':
+        await newWindow.loadURL('https://www.kuaishou.com/new-reco')
+        break
+      case 'kuwo-music':
+        await newWindow.loadURL('https://www.kuwo.cn/')
+        break
+      case 'little-red-book':
+        await newWindow.loadURL('https://www.xiaohongshu.com/explore')
+        break
+      case 'migu-music':
+        await newWindow.loadURL('https://music.migu.cn/')
+        break
+      case 'migu':
+        await newWindow.loadURL('https://www.migu.cn/')
+        break
+      case 'netease-cloud':
+        await newWindow.loadURL('https://music.163.com/')
+        break
+      case 'qq-music':
+        await newWindow.loadURL('https://y.qq.com/')
+        break
+      case 'taobao':
+        await newWindow.loadURL('https://www.taobao.com/')
+        break
+      case 'tencent-video':
+        await newWindow.loadURL('https://v.qq.com/')
+        break
+      case 'xigua-video':
+        await newWindow.loadURL('https://www.ixigua.com/')
+        break
+      case 'cctv5-live':
+        await newWindow.loadURL('https://tv.cctv.com/live/cctv5/')
+        break
+      case 'cctv-sport':
+        await newWindow.loadURL('https://sports.cctv.com/')
+        break
+      default:
+        break
+    }
+    newWindow.webContents.on('did-fail-load', (event, errorCode, errorDescription, validatedURL) => {
+      console.error(`Failed to load ${validatedURL}: ${errorDescription} (${errorCode})`);
+      newWindow.close();
+    });
   });
+
 
   // Open the DevTools. (Ctr + Shift + I)
   mainWindow.webContents.openDevTools()
